@@ -1,12 +1,13 @@
-import streamlit as st
 import base64
 import io
 from pathlib import Path
 
+import streamlit as st
+
 # Constantes do Sistema
 MARCAS = [
     "Eudora", "O Boticário", "Jequiti", "Avon", "Mary Kay", "Natura", 
-    "Oui-Original-Unique-Individuel", "Pierre Alexander", "Tupperware", "Pierre-cosmeticos" "Outra"
+    "Oui-Original-Unique-Individuel", "Pierre Alexander", "Tupperware", "Pierre-cosmeticos", "Quem Disse Berenice","Outra"
 ]
 
 ESTILOS = [
@@ -44,6 +45,7 @@ COLOR_TEXT_LARGE_1 = "#800020"
 COLOR_TEXT_LARGE_2 = "#36454F"
 
 import os
+
 
 def get_product_image_source(product_row):
     """
@@ -272,8 +274,9 @@ def apply_custom_css():
         </style>
     """, unsafe_allow_html=True)
 
-from fpdf import FPDF
 import pandas as pd
+from fpdf import FPDF
+
 
 def generate_pdf(products_df):
     pdf = FPDF()
